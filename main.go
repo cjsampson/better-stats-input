@@ -13,6 +13,9 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+// create a server with chromedp and send data to it
+// 1. create a client/server relationhip and have an api to send data
+
 var addr = flag.String("addr", "localhost:8080", "http service address")
 var mode = flag.String("mode", "client", "host or client")
 
@@ -37,6 +40,7 @@ func main() {
 
 func startServer() {
 	http.HandleFunc("/ws", wsHandler)
+	http.HandleFunc("/log", wsLog)
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }
 
@@ -45,6 +49,7 @@ func broadcaster() {
 		msg := <-broadcast
 		mutex.Lock()
 		for client := range clients {
+
 			err := client.WriteMessage(websocket.TextMessage, []byte(msg))
 			if err != nil {
 				client.Close()
@@ -53,6 +58,10 @@ func broadcaster() {
 		}
 		mutex.Unlock()
 	}
+}
+
+func wsLogHandler(w http.ResponseWriter, r *http.Request) {
+
 }
 
 func wsHandler(w http.ResponseWriter, r *http.Request) {
