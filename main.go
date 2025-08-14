@@ -15,6 +15,7 @@ import (
 
 // create a server with chromedp and send data to it
 // 1. create a client/server relationhip and have a
+// 2. need to brush up on machine learning and calculus
 
 var addr = flag.String("addr", "localhost:8080", "http service address")
 var mode = flag.String("mode", "client", "host or client")
