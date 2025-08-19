@@ -20,21 +20,6 @@ import (
 
 var addr = flag.String("addr", "localhost:8080", "chromedp server address")
 
-// Command represents a WebSocket command to send to ChromeDP server
-type Command struct {
-	Action string                 `json:"action"`
-	Data   map[string]interface{} `json:"data,omitempty"`
-	ID     string                 `json:"id,omitempty"`
-}
-
-// Response represents a WebSocket response from ChromeDP server
-type Response struct {
-	ID      string      `json:"id,omitempty"`
-	Success bool        `json:"success"`
-	Data    interface{} `json:"data,omitempty"`
-	Error   string      `json:"error,omitempty"`
-}
-
 func main() {
 	flag.Parse()
 
