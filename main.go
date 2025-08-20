@@ -17,6 +17,8 @@ import (
 // create a server with chromedp and send data to it
 // 1. create a client/server relationhip and have a
 // 2. need to brush up on machine learning and calculus
+// 3. understand the websocket load-balancing strategy
+// 4. start both services at once
 
 var addr = flag.String("addr", "localhost:8080", "chromedp server address")
 
