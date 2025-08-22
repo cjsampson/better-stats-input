@@ -20,6 +20,7 @@ import (
 // 3. understand the websocket load-balancing strategy
 // 4. start both services at once
 // 5. learn how the routing to the websockets work
+// 6. make a more robust api for sending and receiving data
 
 var addr = flag.String("addr", "localhost:8080", "chromedp server address")
 
