@@ -21,6 +21,7 @@ import (
 // 4. start both services at once
 // 5. learn how the routing to the websockets work
 // 6. make a more robust api for sending and receiving data
+// 7. train the model to be able to give feedback for the browser
 
 var addr = flag.String("addr", "localhost:8080", "chromedp server address")
 
